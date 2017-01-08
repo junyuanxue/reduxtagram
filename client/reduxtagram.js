@@ -1,10 +1,9 @@
 import React from 'react'
 import { render } from 'react-dom'
+import router from './config/router'
 import css from './styles/style.styl'
 
-import Main from './components/Main'
-
 render(
-  <Main />,
+  router,
   document.getElementById('root')
 )
