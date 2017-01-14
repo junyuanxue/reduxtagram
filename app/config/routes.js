@@ -5,7 +5,7 @@ import Main from '../components/Main'
 import SinglePhoto from '../components/SinglePhoto'
 import PhotoGrid from '../components/PhotoGrid'
 
-const router = (
+const routes = (
   <Router history={browserHistory}>
     <Route path='/' component={Main}>
       <IndexRoute component={PhotoGrid} />
@@ -14,4 +14,4 @@ const router = (
   </Router>
 )
 
-export default router
+export default routes
