@@ -20,7 +20,7 @@ class PhotoGrid extends React.Component {
 }
 
 PhotoGrid.propTypes = {
-  posts: PropTypes.array.isRequired
+  posts: PropTypes.array
 }
 
 export default PhotoGrid

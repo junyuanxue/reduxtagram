@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
+import CSSTransitionGroup from 'react-addons-css-transition-group'
 
 class Photo extends React.Component {
   render () {
@@ -15,6 +16,10 @@ class Photo extends React.Component {
       </figure>
     )
   }
+}
+
+Photo.propTypes = {
+  post: PropTypes.object
 }
 
 export default Photo
