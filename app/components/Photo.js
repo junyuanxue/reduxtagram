@@ -8,8 +8,9 @@ class Photo extends React.Component {
       <figure className='grid-figure'>
         <div className='grid-photo-wrap'>
           <Link to={`view/${post.code}`}>
-            {post.caption}
+            <img src={post.display_src} alt={post.caption} className='grid-photo' />
           </Link>
+          <div>{post.caption}</div>
         </div>
       </figure>
     )
