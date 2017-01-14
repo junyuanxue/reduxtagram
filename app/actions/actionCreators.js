@@ -1,4 +1,7 @@
-export function increment (index) {
+// an action: returns an object of what happened and
+// what needs to be changed
+
+export function incrementLikes (index) {
   return {
     type: 'INCREMENT_LIKES',
     index
