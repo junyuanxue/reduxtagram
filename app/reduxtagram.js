@@ -1,9 +1,9 @@
 import React from 'react'
 import { render } from 'react-dom'
-import router from './config/router'
+import routes from './config/routes'
 import css from './styles/style.styl'
 
 render(
-  router,
+  routes,
   document.getElementById('root')
 )
