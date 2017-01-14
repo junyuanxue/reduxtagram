@@ -1,5 +1,7 @@
 import React from 'react'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
+import { Provider } from 'react-redux'
+import store, { history } from '../store'
 
 import Main from '../components/Main'
 import SinglePhoto from '../components/SinglePhoto'

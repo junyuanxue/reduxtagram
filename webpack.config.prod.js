@@ -4,7 +4,7 @@ const webpack = require('webpack')
 module.exports = {
   devtool: 'source-map',
   entry: [
-    './client/reduxtagram'
+    './app/reduxtagram'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -29,11 +29,11 @@ module.exports = {
       {
         test: /\.js$/,
         loaders: ['babel'],
-        include: path.join(__dirname, 'client')
+        include: path.join(__dirname, 'app')
       },
       {
         test: /\.styl$/,
-        include: path.join(__dirname, 'client'),
+        include: path.join(__dirname, 'app'),
         loader: 'style-loader!css-loader!stylus-loader'
       }
     ]
