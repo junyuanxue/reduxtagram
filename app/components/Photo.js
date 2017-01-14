@@ -11,7 +11,6 @@ class Photo extends React.Component {
           <Link to={`view/${post.code}`}>
             <img src={post.display_src} alt={post.caption} className='grid-photo' />
           </Link>
-          <div>{post.caption}</div>
           <CSSTransitionGroup
             transitionName='Like'
             transitionEnterTimeout={500}
@@ -21,6 +20,12 @@ class Photo extends React.Component {
               </span>
           </CSSTransitionGroup>
         </div>
+        <figcaption>
+          <p>{post.caption}</p>
+          <div className='control-buttons'>
+            <button className='likes'>&hearts; {post.likes}</button>
+          </div>
+        </figcaption>
       </figure>
     )
   }
