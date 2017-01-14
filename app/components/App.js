@@ -14,7 +14,7 @@ function mapDispatchToProps (dispatch) {
   return bindActionCreators(actionCreators, dispatch)
 }
 
-// pass state to Main
+// pass state to Main and make actions available to Main
 const App = connect(mapStateToProps, mapDispatchToProps)(Main)
 
 export default App
