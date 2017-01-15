@@ -1,3 +1,13 @@
+function posts (state = [], action) {
+  console.log('posts action')
+  console.log('posts state: ', state)
+  console.log('posts action: ', action)
+  return state
+}
+
+export default posts
+
+// * NOTES *
 // A reducer takes in 2 things:
 // 1. the action (info what happened)
 // 2. copy of current state
@@ -7,11 +17,13 @@
 // Every time an action is dispatched, every reducer is going to run,
 // hence the switch statement
 
-function posts (state = [], action) {
-  console.log('posts action')
-  console.log('posts state: ', state)
-  console.log('posts action: ', action)
-  return state
-}
-
-export default posts
+// In redux, we use functional programming:
+// we do not mutate our state, we use pure functions.
+// we do not mutate something that's outside a function.
+// --- Inpure function: ---
+// function addLikes (picture) {
+//   picture.likes ++
+//   return picture
+// }
+// --- Pure function: ---
+// we take a copy of the state, modify it, and return the new state
