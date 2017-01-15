@@ -26,7 +26,7 @@ class SinglePhoto extends React.Component {
 
 SinglePhoto.propTypes = {
   params: PropTypes.object.isRequired,
-  posts: PropTypes.array.isRequired
+  posts: PropTypes.array
 }
 
 export default SinglePhoto
