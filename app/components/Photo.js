@@ -23,7 +23,11 @@ class Photo extends React.Component {
         <figcaption>
           <p>{post.caption}</p>
           <div className='control-buttons'>
-            <button className='likes'>&hearts; {post.likes}</button>
+            <button
+              onClick={this.props.incrementLikes.bind(null, index)}
+              className='likes'>
+              &hearts; {post.likes}
+            </button>
             <Link className='button' to={`view/${post.code}`}>
               <span className='comment-count'>
                 <span className='speech-bubble' />
@@ -40,7 +44,8 @@ class Photo extends React.Component {
 Photo.propTypes = {
   post: PropTypes.object,
   index: PropTypes.number,
-  comments: PropTypes.object
+  comments: PropTypes.object,
+  incrementLikes: PropTypes.func.isRequired
 }
 
 export default Photo
