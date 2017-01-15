@@ -1,13 +1,15 @@
 import React, { PropTypes } from 'react'
 import Photo from './Photo'
-// import Comments
+import Comments from './Comments'
 
 class SinglePhoto extends React.Component {
   render () {
-    const code = this.props.params.postId
+    const { postId } = this.props.params
     const posts = this.props.posts
-    const index = posts.findIndex((post) => post.code === code)
+
+    const index = posts.findIndex((post) => post.code === postId)
     const post = posts[index]
+    const postComments = this.props.comments[postId] || []
 
     return (
       <div className='single-photo'>
@@ -15,6 +17,8 @@ class SinglePhoto extends React.Component {
           index={index}
           post={post}
           {...this.props} />
+        <Comments
+          postComments={postComments} />
       </div>
     )
   }
