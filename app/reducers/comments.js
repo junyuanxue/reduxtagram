@@ -9,6 +9,7 @@ function postComments (state = [], action) {
         }
       ]
     case 'REMOVE_COMMENT':
+      console.log('removing a comment')
       return state
     default:
       return state

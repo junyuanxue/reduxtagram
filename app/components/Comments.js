@@ -3,10 +3,9 @@ import React, { PropTypes } from 'react'
 class Comments extends React.Component {
   handleSubmit (e) {
     e.preventDefault() // preventing the form from refreshing
-    const { postId } = this.props
     const author = this.refs.author.value
     const comment = this.refs.comment.value
-    this.props.addComment(postId, author, comment)
+    this.props.addComment(this.props.postId, author, comment)
     this.refs.commentForm.reset()
     this.refs.author.focus()
   }
@@ -17,7 +16,11 @@ class Comments extends React.Component {
         <p>
           <strong>{comment.user}</strong>
           {comment.text}
-          <button className='remove-comment'>&times;</button>
+          <button
+            onClick={this.props.removeComment.bind(null, this.props.postId, i)}
+            className='remove-comment'>
+            &times;
+          </button>
         </p>
       </div>
     )
@@ -26,8 +29,11 @@ class Comments extends React.Component {
   render () {
     return (
       <div className='comments'>
-        {this.props.postComments.map(this.renderComment)}
-        <form ref='commentForm' className='comment-form' onSubmit={this.handleSubmit.bind(this)}>
+        {this.props.postComments.map(this.renderComment.bind(this))}
+        <form
+          onSubmit={this.handleSubmit.bind(this)}
+          ref='commentForm'
+          className='comment-form'>
           <input type='text' ref='author' placeholder='author' />
           <input type='text' ref='comment' placeholder='comment' />
           <input type='submit' hidden />
@@ -40,7 +46,8 @@ class Comments extends React.Component {
 Comments.propTypes = {
   postComments: PropTypes.array.isRequired,
   postId: PropTypes.string.isRequired,
-  addComment: PropTypes.func.isRequired
+  addComment: PropTypes.func.isRequired,
+  removeComment: PropTypes.func.isRequired
 }
 
 export default Comments
