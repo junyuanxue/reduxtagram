@@ -26,4 +26,10 @@ export default posts
 //   return picture
 // }
 // --- Pure function: ---
-// we take a copy of the state, modify it, and return the new state
+// we take a copy of the state, modify it, and return the new state:
+// function addLikes (picture) {
+//   var pic = Object.assign({}, picture)
+//   pic.likes ++
+//   return pic
+// }
+// So everytime we pass in the same object, it will return the same value. It's a predicatable and pure function that is not mutating any external state.
