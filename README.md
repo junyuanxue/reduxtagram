@@ -22,7 +22,7 @@ hence the switch statement.
 In redux, we use functional programming:
 _we do not **mutate our state**, we use **pure functions**_. (We do not mutate something that's outside a function.)
 
-* Inpure function:
+* Impure function:
 ```
 function addLikes (picture) {
   picture.likes ++
@@ -41,5 +41,5 @@ So everytime we pass in the same object, it will return the same value. It's a p
 
 ---
 
-Reducer composition: we only want a **slice** of the state to manage.
+**Reducer composition**: we only want a **slice** of the state to manage.
 So rather than changing the entire comments state, we only want to change the state of comments that belong to one post.
