@@ -4,7 +4,9 @@ class Comments extends React.Component {
   handleSubmit (e) {
     e.preventDefault() // preventing the form from refreshing
     console.log('submitting form')
-    console.log(this.refs)
+    const { postId } = this.props
+    const author = this.refs.author.value
+    const comment = this.refs.comment.value
   }
 
   renderComment (comment, i) {
@@ -34,7 +36,8 @@ class Comments extends React.Component {
 }
 
 Comments.propTypes = {
-  postComments: PropTypes.array.isRequired
+  postComments: PropTypes.array.isRequired,
+  postId: PropTypes.string.isRequired
 }
 
 export default Comments

@@ -18,6 +18,7 @@ class SinglePhoto extends React.Component {
           post={post}
           {...this.props} />
         <Comments
+          postId={postId}
           postComments={postComments} />
       </div>
     )
@@ -26,7 +27,8 @@ class SinglePhoto extends React.Component {
 
 SinglePhoto.propTypes = {
   params: PropTypes.object.isRequired,
-  posts: PropTypes.array
+  posts: PropTypes.array,
+  comments: PropTypes.object
 }
 
 export default SinglePhoto
