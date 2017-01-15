@@ -11,6 +11,7 @@ class Photo extends React.Component {
           <Link to={`view/${post.code}`}>
             <img src={post.display_src} alt={post.caption} className='grid-photo' />
           </Link>
+
           <CSSTransitionGroup
             transitionName='Like'
             transitionEnterTimeout={500}
@@ -20,14 +21,17 @@ class Photo extends React.Component {
               </span>
           </CSSTransitionGroup>
         </div>
+
         <figcaption>
           <p>{post.caption}</p>
+
           <div className='control-buttons'>
             <button
               onClick={this.props.incrementLikes.bind(null, index)}
               className='likes'>
               &hearts; {post.likes}
             </button>
+
             <Link className='button' to={`view/${post.code}`}>
               <span className='comment-count'>
                 <span className='speech-bubble' />
