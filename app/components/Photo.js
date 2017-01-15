@@ -38,7 +38,9 @@ class Photo extends React.Component {
 }
 
 Photo.propTypes = {
-  post: PropTypes.object
+  post: PropTypes.object,
+  index: PropTypes.number,
+  comments: PropTypes.object
 }
 
 export default Photo
