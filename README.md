@@ -38,3 +38,8 @@ function addLikes (picture) {
   }
 ```
 So everytime we pass in the same object, it will return the same value. It's a predicatable and pure function that is not mutating any external state.
+
+---
+
+Reducer composition: we only want a **slice** of the state to manage.
+So rather than changing the entire comments state, we only want to change the state of comments that belong to one post.
