@@ -3,10 +3,10 @@ import React, { PropTypes } from 'react'
 class Comments extends React.Component {
   handleSubmit (e) {
     e.preventDefault() // preventing the form from refreshing
-    console.log('submitting form')
     const { postId } = this.props
     const author = this.refs.author.value
     const comment = this.refs.comment.value
+    this.props.addComment(postId, author, comment)
   }
 
   renderComment (comment, i) {
@@ -37,7 +37,8 @@ class Comments extends React.Component {
 
 Comments.propTypes = {
   postComments: PropTypes.array.isRequired,
-  postId: PropTypes.string.isRequired
+  postId: PropTypes.string.isRequired,
+  addComment: PropTypes.func.isRequired
 }
 
 export default Comments

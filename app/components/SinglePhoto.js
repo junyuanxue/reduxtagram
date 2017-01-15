@@ -18,8 +18,9 @@ class SinglePhoto extends React.Component {
           post={post}
           {...this.props} />
         <Comments
+          postComments={postComments}
           postId={postId}
-          postComments={postComments} />
+          {...this.props} />
       </div>
     )
   }
