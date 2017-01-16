@@ -4,7 +4,18 @@ Redux tutorial from https://learnredux.com/.
 
 (This is the second Instagram clone that I made. For my previous Ruby on Rails app (no JavaScript!), see [J-Instagram](https://github.com/junyuanxue/instagram-challenge).)
 
+<!-- TODO -->
+* Create add photo action.
+* Hook up Redux with an API: Redux Thunk or Saga (which would allow me to do async calls to an API in Redux).
+* If deeply nested JSON: try Normalizr.
+
 ### Some notes from the videos :pencil:
+
+The idea of Redux: instead of having many multiple states we have a giant **store** that holds all the states.
+We update the store/states with **actions**. When actions get dispatched, they're handled by **reducers**.
+
+---
+
 A reducer takes in 2 things:
 
 1) the action (info what happened);
