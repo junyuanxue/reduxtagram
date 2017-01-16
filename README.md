@@ -4,12 +4,22 @@ Redux tutorial from https://learnredux.com/.
 
 (This is the second Instagram clone that I made. For my previous Ruby on Rails app (no JavaScript!), see [J-Instagram](https://github.com/junyuanxue/instagram-challenge).)
 
-<!-- TODO -->
-* Create add photo action.
-* Hook up Redux with an API: Redux Thunk or Saga (which would allow me to do async calls to an API in Redux).
-* If deeply nested JSON: try Normalizr.
+![Imgur](http://i.imgur.com/j9aHRo6.png)
 
-### Some notes from the videos :pencil:
+## Tools :wrench:
+* React
+* Redux
+* Webpack
+* Express
+
+## To do :ballot_box_with_check:
+
+<!-- TODO -->
+- [ ] Create add photo action.
+- [ ] Hook up Redux with an API: Redux Thunk or Saga (which would allow me to do async calls to an API in Redux).
+- [ ] If deeply nested JSON: try Normalizr.
+
+## Some notes from the videos :pencil:
 
 The idea of Redux: instead of having many multiple states we have a giant **store** that holds all the states.
 We update the store/states with **actions**. When actions get dispatched, they're handled by **reducers**.
@@ -54,3 +64,8 @@ So everytime we pass in the same object, it will return the same value. It's a p
 
 **Reducer composition**: we only want a **slice** of the state to manage.
 So rather than changing the entire comments state, we only want to change the state of comments that belong to one post.
+
+## Author :cat:
+Junyuan Xue
+
+[github](https://github.com/junyuanxue) | [blog](https://spinningcodes.wordpress.com/) | [website](http://junyuanxue.github.io/)
