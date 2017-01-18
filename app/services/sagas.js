@@ -7,7 +7,8 @@ function * fetchPhotos () {                 // The function* declaration defines
     const photos = yield call(api.fetchPhotos)
     yield put({type: 'PHOTOS_FETCH_SUCCEEDED', photos: photos})
   } catch (e) {
-    yield put({type: 'PHOTOS_FETCH_FAILED', message: e.message})
+    console.log(e)
+    yield put({type: 'PHOTOS_FETCH_FAILED', message: e})
   }
 }
 
