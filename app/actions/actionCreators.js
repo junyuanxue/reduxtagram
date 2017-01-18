@@ -1,6 +1,12 @@
 // an action: returns an object of what happened and
 // what needs to be changed
 
+export function fetchPhotos () {
+  return {
+    type: 'FETCH_PHOTOS'
+  }
+}
+
 export function addPhoto (author, photo) {
   return {
     type: 'ADD_PHOTO',

@@ -2,6 +2,11 @@ import React, { PropTypes } from 'react'
 import Photo from './Photo'
 
 class PhotoGrid extends React.Component {
+  componentWillMount () {
+    console.log('component will mount')
+    this.props.fetchPhotos()
+  }
+
   render () {
     const photoList = this.props.posts.map((post, i) => {
       return <Photo
@@ -20,7 +25,8 @@ class PhotoGrid extends React.Component {
 }
 
 PhotoGrid.propTypes = {
-  posts: PropTypes.array
+  posts: PropTypes.array,
+  fetchPhotos: PropTypes.func.isRequired
 }
 
 export default PhotoGrid
