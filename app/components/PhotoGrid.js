@@ -25,7 +25,7 @@ class PhotoGrid extends React.Component {
 
 PhotoGrid.propTypes = {
   posts: PropTypes.array,
-  fetchPhotos: PropTypes.func.isRequired
+  fetchPhotos: PropTypes.func
 }
 
 export default PhotoGrid
