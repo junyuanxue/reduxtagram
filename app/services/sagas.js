@@ -2,12 +2,12 @@ import { call, put, takeEvery, takeLatest } from 'redux-saga/effects'
 import api from './api'
 
 // worker Saga: will be fired on FETCH_PHOTOS actions
-function * fetchPhotos () {                 // The function* declaration defines a generator function,
-  try {                                     // which returns a Generator object.
+// The function* declaration defines a generator function, which returns a Generator object.
+function * fetchPhotos () {
+  try {
     const photos = yield call(api.fetchPhotos)
     yield put({type: 'PHOTOS_FETCH_SUCCEEDED', photos: photos})
   } catch (e) {
-    console.log(e)
     yield put({type: 'PHOTOS_FETCH_FAILED', message: e})
   }
 }

@@ -8,11 +8,8 @@ const api = {
     return $.ajax({
       type: 'GET',
       url: endpoint,
-      dataType: 'jsonp',
-      success: (data) => {
-        return data
-      }
-    })
+      dataType: 'jsonp'
+    }).then(response => response.data)
   }
 }
 
