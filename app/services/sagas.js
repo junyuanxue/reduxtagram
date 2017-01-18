@@ -1,10 +1,10 @@
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects'
-import Api from '...'
+import api from './api'
 
 // worker Saga: will be fired on FETCH_PHOTOS actions
-function* fetchPhotos () {                    // The function* declaration defines a generator function,
-  try {                                       // which returns a Generator object.
-    const photos = yield call(Api.fetchPhotos)
+function * fetchPhotos () {                 // The function* declaration defines a generator function,
+  try {                                     // which returns a Generator object.
+    const photos = yield call(api.fetchPhotos)
     yield put({type: 'PHOTOS_FETCH_SUCCEEDED', photos: photos})
   } catch (e) {
     yield put({type: 'PHOTOS_FETCH_FAILED', message: e.message})
@@ -25,7 +25,7 @@ function* fetchPhotos () {                    // The function* declaration defin
   dispatched while a fetch is already pending, that pending fetch is cancelled
   and only the latest one will be run.
 */
-function* saga () {
+function * saga () {
   yield takeLatest('FETCH_PHOTOS', fetchPhotos)
 }
 
