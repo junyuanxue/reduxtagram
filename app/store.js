@@ -21,7 +21,6 @@ const enhancer = compose(
 
 // const store = createStore(rootReducer, defaultState, enhancer)
 const store = createStore(rootReducer, enhancer)
-console.log(store)
 
 export const history = syncHistoryWithStore(browserHistory, store)
 

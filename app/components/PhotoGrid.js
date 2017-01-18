@@ -3,7 +3,6 @@ import Photo from './Photo'
 
 class PhotoGrid extends React.Component {
   componentWillMount () {
-    console.log('component will mount')
     this.props.fetchPhotos()
   }
 
