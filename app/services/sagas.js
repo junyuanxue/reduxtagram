@@ -35,10 +35,9 @@ function * fetchComments (action) {
   dispatched while a fetch is already pending, that pending fetch is cancelled
   and only the latest one will be run.
 */
-export function * photosSaga () {
+function * saga () {
+  yield takeLatest('FETCH_COMMENTS', fetchComments)
   yield takeLatest('FETCH_PHOTOS', fetchPhotos)
 }
 
-export function * commentsSata () {
-  yield takeLatest('FETCH_COMMENTS', fetchComments)
-}
+export default saga
