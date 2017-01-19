@@ -12,6 +12,15 @@ function * fetchPhotos () {
   }
 }
 
+function * fetchComments (action) {
+  try {
+    const comments = yield call(api.fetchComments, action.postId)
+    yield put({type: 'COMMENTS_FETCH_SUCCEEDED', comments: comments})
+  } catch (e) {
+    yield put({type: 'COMMENTS_FETCH_FAILED', message: e})
+  }
+}
+
 /*
   Starts fetchPhotos on each dispatched `FETCH_PHOTOS` action.
   Allows concurrent fetches of photos.
@@ -26,8 +35,10 @@ function * fetchPhotos () {
   dispatched while a fetch is already pending, that pending fetch is cancelled
   and only the latest one will be run.
 */
-function * saga () {
+export function * photosSaga () {
   yield takeLatest('FETCH_PHOTOS', fetchPhotos)
 }
 
-export default saga
+export function * commentsSata () {
+  yield takeLatest('FETCH_COMMENTS', fetchComments)
+}
