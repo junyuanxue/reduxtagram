@@ -7,9 +7,9 @@ class SinglePhoto extends React.Component {
     const { postId } = this.props.params
     const posts = this.props.posts
 
-    const index = posts.findIndex((post) => post.code === postId)
+    const index = posts.findIndex((post) => post.id === postId)
     const post = posts[index]
-    const postComments = this.props.comments[postId] || []
+    const postComments = this.props.fetchComments(postId) || []
 
     return (
       <div className='single-photo'>
@@ -29,7 +29,7 @@ class SinglePhoto extends React.Component {
 SinglePhoto.propTypes = {
   params: PropTypes.object.isRequired,
   posts: PropTypes.array,
-  comments: PropTypes.object
+  fetchComments: PropTypes.func.isRequired
 }
 
 export default SinglePhoto
