@@ -7,7 +7,7 @@ function posts (state = [], action) {
     case 'PHOTOS_FETCH_SUCCEEDED':
       return action.photos
     case 'PHOTOS_FETCH_FAILED':
-      console.log('Photo fetch failed :(')
+      console.log('Photos fetch failed :(')
       break
     case 'INCREMENT_LIKES':
       const i = action.index

@@ -27,6 +27,15 @@ function comments (state = [], action) {
       ...state,                                                   // take current state
       [action.postId]: postComments(state[action.postId], action) // overwrite this post with a new one
     }
+  } else {
+    switch (action.type) {
+      case 'COMMENTS_FETCH_SUCCEEDED':
+        console.log(action.comments)
+        break
+      case 'COMMENTS_FETCH_FAILED':
+        console.log('Comments fetch failed :(')
+        break
+    }
   }
   return state
 }

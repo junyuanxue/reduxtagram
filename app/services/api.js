@@ -12,8 +12,9 @@ const api = {
       dataType: 'jsonp'
     }).then(response => response.data)
   },
+
   fetchComments: (postId) => {
-    const url = `${base}/media/${postId}/comments?access_token=${postId}`
+    const url = `${base}/media/${postId}/comments?access_token=${token}`
     return $.ajax({
       type: 'GET',
       url: url,
