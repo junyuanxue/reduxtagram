@@ -1,6 +1,7 @@
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import * as actionCreators from '../actions/actionCreators'
+import actions from '../actions/actionCreators'
+// import * as actionCreators from '../actions/photosActions'
 import Main from './Main'
 
 function mapStateToProps (state) {
@@ -9,9 +10,11 @@ function mapStateToProps (state) {
     comments: state.comments
   }
 }
+console.log(actions)
+// console.log(actionCreators)
 
 function mapDispatchToProps (dispatch) {
-  return bindActionCreators(actionCreators, dispatch)
+  return bindActionCreators(actions, dispatch)
 }
 
 // pass state to Main and make actions available to Main

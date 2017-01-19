@@ -3,13 +3,17 @@ import Photo from './Photo'
 import Comments from './Comments'
 
 class SinglePhoto extends React.Component {
+  componentWillMount () {
+    const postId = this.props.params.postId
+    this.props.fetchComments(postId)
+  }
+
   render () {
-    const { postId } = this.props.params
+    const postId = this.props.params.postId
     const posts = this.props.posts
 
     const index = posts.findIndex((post) => post.id === postId)
     const post = posts[index]
-    const postComments = this.props.fetchComments(postId) || []
 
     return (
       <div className='single-photo'>
@@ -18,7 +22,7 @@ class SinglePhoto extends React.Component {
           post={post}
           {...this.props} />
         <Comments
-          postComments={postComments}
+          postComments={this.props.comments || []}
           postId={postId}
           {...this.props} />
       </div>
@@ -29,7 +33,8 @@ class SinglePhoto extends React.Component {
 SinglePhoto.propTypes = {
   params: PropTypes.object.isRequired,
   posts: PropTypes.array,
-  fetchComments: PropTypes.func.isRequired
+  fetchComments: PropTypes.func.isRequired,
+  comments: PropTypes.array
 }
 
 export default SinglePhoto

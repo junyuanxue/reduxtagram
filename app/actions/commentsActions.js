@@ -1,6 +1,6 @@
-export function fetchComment (postId) {
+export function fetchComments (postId) {
   return {
-    type: 'FETCH_COMMENT',
+    type: 'FETCH_COMMENTS',
     postId
   }
 }
