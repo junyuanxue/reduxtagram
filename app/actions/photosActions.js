@@ -4,20 +4,6 @@ export function fetchPhotos () {
   }
 }
 
-function handlePhotoFetchSuccess (photos) {
-  return {
-    type: 'PHOTOS_FETCH_SUCCEEDED',
-    photos
-  }
-}
-
-function handlePhotoFetchFailure (message) {
-  return {
-    type: 'PHOTOS_FETCH_FAILED',
-    message
-  }
-}
-
 export function addPhoto (author, photo) {
   return {
     type: 'ADD_PHOTO',

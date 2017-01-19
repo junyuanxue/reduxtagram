@@ -30,8 +30,7 @@ function comments (state = [], action) {
   } else {
     switch (action.type) {
       case 'COMMENTS_FETCH_SUCCEEDED':
-        console.log(action.comments)
-        break
+        return action.comments
       case 'COMMENTS_FETCH_FAILED':
         console.log('Comments fetch failed :(')
         break

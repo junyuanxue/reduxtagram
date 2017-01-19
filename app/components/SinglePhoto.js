@@ -33,7 +33,7 @@ class SinglePhoto extends React.Component {
 SinglePhoto.propTypes = {
   params: PropTypes.object.isRequired,
   posts: PropTypes.array,
-  fetchComments: PropTypes.func.isRequired,
+  fetchComments: PropTypes.func,
   comments: PropTypes.array
 }
 
