@@ -7,38 +7,38 @@ import CSSTransitionGroup from 'react-addons-css-transition-group'
 
 class Photo extends React.Component {
   render () {
-    const { post, index, comments } = this.props // creates 3 vars post, index, comments from this.props
+    const { post, index } = this.props
     return (
       <figure className='grid-figure'>
         <div className='grid-photo-wrap'>
-          <Link to={`view/${post.code}`}>
-            <img src={post.display_src} alt={post.caption} className='grid-photo' />
+          <Link to={`view/${post.id}`}>
+            <img src={post.images.standard_resolution.url} alt={index} className='grid-photo' />
           </Link>
 
           <CSSTransitionGroup
             transitionName='Like'
             transitionEnterTimeout={500}
             transitionLeaveTimeout={500}>
-              <span key={post.likes} className='likes-heart'>
-                {post.likes}
+              <span key={post.likes.count} className='likes-heart'>
+                {post.likes.count}
               </span>
           </CSSTransitionGroup>
         </div>
 
         <figcaption>
-          <p>{post.caption}</p>
+          <p>{post.caption ? post.caption.text : ''}</p>
 
           <div className='control-buttons'>
             <button
               onClick={this.props.incrementLikes.bind(null, index)}
               className='likes'>
-              &hearts; {post.likes}
+              &hearts; {post.likes.count}
             </button>
 
-            <Link className='button' to={`view/${post.code}`}>
+            <Link className='button' to={`view/${post.id}`}>
               <span className='comment-count'>
                 <span className='speech-bubble' />
-                {comments[post.code] ? ` ${comments[post.code].length}` : ` 0`}
+                {post.comments.count}
               </span>
             </Link>
           </div>
@@ -51,7 +51,6 @@ class Photo extends React.Component {
 Photo.propTypes = {
   post: PropTypes.object,
   index: PropTypes.number,
-  comments: PropTypes.object,
   incrementLikes: PropTypes.func.isRequired
 }
 
