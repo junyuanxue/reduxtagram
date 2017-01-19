@@ -3,20 +3,18 @@
 // hence the switch statement
 
 function posts (state = [], action) {
-  console.log('action dispatched')
-  console.log(action.type)
   switch (action.type) {
     case 'PHOTOS_FETCH_SUCCEEDED':
-      console.log(action.photos)
+      return action.photos
     case 'PHOTOS_FETCH_FAILED':
-      console.log(action.message)
-    // case 'INCREMENT_LIKES':
-    //   const i = action.index
-    //   return [                                    // return updated state
-    //     ...state.slice(0, i),                     // before the one we're updating
-    //     {...state[i], likes: state[i].likes + 1}, // the post we're updating
-    //     ...state.slice(i + 1)                     // after the one we're updating
-    //   ]
+      console.log('photo fetch failed')
+    case 'INCREMENT_LIKES':
+      const i = action.index
+      return [                                    // return updated state
+        ...state.slice(0, i),                     // before the one we're updating
+        {...state[i], likes: state[i].likes + 1}, // the post we're updating
+        ...state.slice(i + 1)                     // after the one we're updating
+      ]
     default:
       return state
   }
