@@ -11,13 +11,14 @@ class Comments extends React.Component {
   }
 
   renderComment (comment, i) {
+    console.log('comment')
     return (
       <div className='comment' key={i}>
         <p>
-          <strong>{comment.user}</strong>
+          <strong>{comment.from.username}</strong>
           {comment.text}
           <button
-            onClick={this.props.removeComment.bind(null, this.props.postId, i)}
+            onClick={this.props.removeComment.bind(null, i)}
             className='remove-comment'>
             &times;
           </button>
