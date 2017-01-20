@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 
 class Main extends React.Component {
+  componentWillMount () {
+    this.props.fetchPhotos()
+  }
+
   render () {
     return (
       <div>
@@ -12,6 +16,10 @@ class Main extends React.Component {
       </div>
     )
   }
+}
+
+Main.propTypes = {
+  fetchPhotos: PropTypes.func
 }
 
 export default Main
