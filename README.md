@@ -9,14 +9,18 @@ Redux tutorial from https://learnredux.com/.
 ## Tools :wrench:
 * React
 * Redux
+* Redux Saga
 * Webpack
 * Express
+* Instagram API
+* jQuery
+* Stylus
 
 ## To do :ballot_box_with_check:
 
 <!-- TODO -->
 - [ ] Create add photo action.
-- [ ] Hook up Redux with an API: Redux Thunk or Saga (which would allow me to do async calls to an API in Redux).
+- [x] Hook up Redux with an API: Redux Thunk or Saga (which would allow me to do async calls to an API in Redux).
 - [ ] If deeply nested JSON: try Normalizr.
 
 ## Some notes from the videos :pencil:
