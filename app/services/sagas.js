@@ -21,6 +21,15 @@ function * fetchComments (action) {
   }
 }
 
+function * fetchUser (action) {
+  try {
+    const user = yield call(api.fetchUser)
+    yield put({type: 'USER_FETCH_SUCCEEDED', user: user})
+  } catch (e) {
+    yield put({type: 'USER_FETCH_FAILED', message: e})
+  }
+}
+
 /*
   Starts fetchPhotos on each dispatched `FETCH_PHOTOS` action.
   Allows concurrent fetches of photos.
@@ -38,6 +47,7 @@ function * fetchComments (action) {
 function * saga () {
   yield takeLatest('FETCH_COMMENTS', fetchComments)
   yield takeLatest('FETCH_PHOTOS', fetchPhotos)
+  yield takeLatest('FETCH_USER', fetchUser)
 }
 
 export default saga
