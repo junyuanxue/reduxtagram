@@ -1,23 +1,3 @@
-// function postComments (state = [], action) {
-//   switch (action.type) {
-//     case 'ADD_COMMENT': // return the new state with the new comment
-//       return [
-//         ...state,
-//         {
-//           user: action.author,
-//           text: action.comment
-//         }
-//       ]
-//     case 'REMOVE_COMMENT': // return the new state without the deleted comment
-//       return [
-//         ...state.slice(0, action.index), // from the start to the one we want to delete
-//         ...state.slice(action.index + 1) // after the deleted one, to the end
-//       ]
-//     default:
-//       return state
-//   }
-// }
-
 function comments (state = [], action) {
   switch (action.type) {
     case 'COMMENTS_FETCH_SUCCEEDED':

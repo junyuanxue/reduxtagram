@@ -11,9 +11,15 @@ function posts (state = [], action) {
       break
     case 'INCREMENT_LIKES':
       const i = action.index
+      const newCount = state[i].likes.count + 1
       return [                                    // return updated state
         ...state.slice(0, i),                     // before the one we're updating
-        {...state[i], likes: state[i].likes + 1}, // the post we're updating
+        {                                         // the post we're updating
+          ...state[i],
+          likes: {
+            count: newCount
+          }
+        },
         ...state.slice(i + 1)                     // after the one we're updating
       ]
     default:
