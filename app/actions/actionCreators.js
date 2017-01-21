@@ -2,10 +2,12 @@
 // what needs to be changed
 import * as photosActions from './photosActions'
 import * as commentsActions from './commentsActions'
+import * as userActions from './userActions'
 
 const actions = {
   ...photosActions,
-  ...commentsActions
+  ...commentsActions,
+  ...userActions
 }
 
 export default actions
