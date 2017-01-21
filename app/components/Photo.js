@@ -14,15 +14,7 @@ class Photo extends React.Component {
           <Link to={`view/${post.id}`}>
             <img src={post.images.standard_resolution.url} alt={index} className='grid-photo' />
           </Link>
-
-          <CSSTransitionGroup
-            transitionName='Like'
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={500}>
-              <span key={post.likes.count} className='likes-heart'>
-                {post.likes.count}
-              </span>
-          </CSSTransitionGroup>
+          <LikesAnimation count={post.likes.count} />
         </div>
 
         <figcaption>
@@ -39,6 +31,19 @@ class Photo extends React.Component {
       </figure>
     )
   }
+}
+
+function LikesAnimation (props) {
+  return (
+    <CSSTransitionGroup
+      transitionName='Like'
+      transitionEnterTimeout={500}
+      transitionLeaveTimeout={500}>
+        <span key={props.count} className='likes-heart'>
+          {props.count}
+        </span>
+    </CSSTransitionGroup>
+  )
 }
 
 function LikeButton (props) {
@@ -66,6 +71,10 @@ Photo.propTypes = {
   post: PropTypes.object,
   index: PropTypes.number,
   incrementLikes: PropTypes.func.isRequired
+}
+
+LikesAnimation.propTypes = {
+  count: PropTypes.number.isRequired
 }
 
 LikeButton.propTypes = {
