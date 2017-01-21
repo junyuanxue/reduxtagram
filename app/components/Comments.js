@@ -5,13 +5,12 @@ class Comments extends React.Component {
     e.preventDefault() // preventing the form from refreshing
     const author = this.refs.author.value
     const comment = this.refs.comment.value
-    this.props.addComment(this.props.postId, author, comment)
+    this.props.addComment(author, comment)
     this.refs.commentForm.reset()
     this.refs.author.focus()
   }
 
   renderComment (comment, i) {
-    console.log('comment')
     return (
       <div className='comment' key={i}>
         <p>

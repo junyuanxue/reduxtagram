@@ -5,10 +5,9 @@ export function fetchComments (postId) {
   }
 }
 
-export function addComment (postId, author, comment) {
+export function addComment (author, comment) {
   return {
     type: 'ADD_COMMENT',
-    postId,
     author,
     comment
   }
