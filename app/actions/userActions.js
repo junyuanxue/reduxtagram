@@ -1,4 +1,4 @@
-export function fetchPhotos () {
+export function fetchUser () {
   return {
     type: 'FETCH_USER'
   }

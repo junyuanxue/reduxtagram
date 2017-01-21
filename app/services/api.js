@@ -14,17 +14,17 @@ const api = {
 
   fetchPhotos: () => {
     const url = `${base}/users/self/media/recent/?access_token=${token}`
-    this.makeRequest(url)
+    api.makeRequest(url)
   },
 
   fetchComments: (postId) => {
     const url = `${base}/media/${postId}/comments?access_token=${token}`
-    this.makeRequest(url)
+    api.makeRequest(url)
   },
 
   fetchUser: () => {
     const url = `${base}/users/self/?access_token=${token}`
-    this.makeRequest(url)
+    api.makeRequest(url)
   }
 }
 
