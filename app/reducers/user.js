@@ -1,4 +1,4 @@
-function user (state = [], action) {
+function user (state = {}, action) {
   return state
 }
 

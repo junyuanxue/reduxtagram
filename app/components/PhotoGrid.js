@@ -14,7 +14,7 @@ class PhotoGrid extends React.Component {
 
     return (
       <div className='photo-grid-wrapper'>
-        <User />
+        <User fetchUser={this.props.fetchUser} />
         <div className='photo-grid'>
           {photoList}
         </div>
@@ -24,7 +24,8 @@ class PhotoGrid extends React.Component {
 }
 
 PhotoGrid.propTypes = {
-  posts: PropTypes.array
+  posts: PropTypes.array,
+  fetchUser: PropTypes.func
 }
 
 export default PhotoGrid
