@@ -24,6 +24,7 @@ function * fetchComments (action) {
 function * fetchUser (action) {
   try {
     const user = yield call(api.fetchUser)
+    console.log(user)
     yield put({type: 'USER_FETCH_SUCCEEDED', user: user})
   } catch (e) {
     yield put({type: 'USER_FETCH_FAILED', message: e})
