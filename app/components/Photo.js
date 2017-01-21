@@ -35,12 +35,7 @@ class Photo extends React.Component {
               &hearts; {post.likes.count}
             </button>
 
-            <Link className='button' to={`view/${post.id}`}>
-              <span className='comment-count'>
-                <span className='speech-bubble' />
-                {post.comments.count}
-              </span>
-            </Link>
+            <CommentLink post={post} />
           </div>
         </figcaption>
       </figure>
@@ -48,10 +43,25 @@ class Photo extends React.Component {
   }
 }
 
+function CommentLink (props) {
+  return (
+    <Link className='button' to={`view/${props.post.id}`}>
+      <span className='comment-count'>
+        <span className='speech-bubble' />
+        {props.post.comments.count}
+      </span>
+    </Link>
+  )
+}
+
 Photo.propTypes = {
   post: PropTypes.object,
   index: PropTypes.number,
   incrementLikes: PropTypes.func.isRequired
+}
+
+CommentLink.propTypes = {
+  post: PropTypes.object.isRequired
 }
 
 export default Photo
