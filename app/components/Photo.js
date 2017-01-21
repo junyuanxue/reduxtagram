@@ -29,13 +29,11 @@ class Photo extends React.Component {
           <p>{post.caption ? post.caption.text : ''}</p>
 
           <div className='control-buttons'>
-            <button
-              onClick={this.props.incrementLikes.bind(null, index)}
-              className='likes'>
-              &hearts; {post.likes.count}
-            </button>
-
-            <CommentLink post={post} />
+            <LikeButton
+              incrementLikes={this.props.incrementLikes}
+              index={index}
+              post={post} />
+            <CommentButton post={post} />
           </div>
         </figcaption>
       </figure>
@@ -43,7 +41,17 @@ class Photo extends React.Component {
   }
 }
 
-function CommentLink (props) {
+function LikeButton (props) {
+  return (
+    <button
+      onClick={props.incrementLikes.bind(null, props.index)}
+      className='likes'>
+      &hearts; {props.post.likes.count}
+    </button>
+  )
+}
+
+function CommentButton (props) {
   return (
     <Link className='button' to={`view/${props.post.id}`}>
       <span className='comment-count'>
@@ -60,7 +68,13 @@ Photo.propTypes = {
   incrementLikes: PropTypes.func.isRequired
 }
 
-CommentLink.propTypes = {
+LikeButton.propTypes = {
+  incrementLikes: PropTypes.func.isRequired,
+  index: PropTypes.number.isRequired,
+  post: PropTypes.object.isRequired
+}
+
+CommentButton.propTypes = {
   post: PropTypes.object.isRequired
 }
 
