@@ -6,7 +6,6 @@ import api from './api'
 function * fetchPhotos () {
   try {
     const photos = yield call(api.fetchPhotos)
-    console.log(photos)
     yield put({type: 'PHOTOS_FETCH_SUCCEEDED', photos: photos})
   } catch (e) {
     yield put({type: 'PHOTOS_FETCH_FAILED', message: e})
@@ -25,7 +24,6 @@ function * fetchComments (action) {
 function * fetchUser (action) {
   try {
     const user = yield call(api.fetchUser)
-    console.log(user)
     yield put({type: 'USER_FETCH_SUCCEEDED', user: user})
   } catch (e) {
     yield put({type: 'USER_FETCH_FAILED', message: e})
