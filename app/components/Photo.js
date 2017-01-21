@@ -2,9 +2,6 @@ import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 import CSSTransitionGroup from 'react-addons-css-transition-group'
 
-// TODO:
-// break view down to smaller components
-
 class Photo extends React.Component {
   render () {
     const { post, index } = this.props

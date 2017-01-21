@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import Photo from './Photo'
+import User from './User'
 
 class PhotoGrid extends React.Component {
   render () {
@@ -12,8 +13,11 @@ class PhotoGrid extends React.Component {
     })
 
     return (
-      <div className='photo-grid'>
-        {photoList}
+      <div className='photo-grid-wrapper'>
+        <User />
+        <div className='photo-grid'>
+          {photoList}
+        </div>
       </div>
     )
   }
