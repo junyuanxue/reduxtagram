@@ -4,7 +4,7 @@ Redux tutorial from https://learnredux.com/.
 
 (This is the second Instagram clone that I made. For my previous Ruby on Rails app (no JavaScript!), see [J-Instagram](https://github.com/junyuanxue/instagram-challenge).)
 
-![Imgur](http://i.imgur.com/j9aHRo6.png)
+![Imgur](http://i.imgur.com/4bj6D0R.png)
 
 ## Tools :wrench:
 * React
